@@ -1,6 +1,11 @@
 class WeekdaysController < ApplicationController
+
+  def getNextOccuring (day)
+    Date.today.next_occurring(day)
+  end
+
   def monday
-    @next_monday = Date.today.next_occurring(:monday)
+    @next_monday = getNextOccuring(:monday)
   end
 
   def tuesday
@@ -26,4 +31,5 @@ class WeekdaysController < ApplicationController
   def sunday
     @next_sunday = Date.today.next_occurring(:sunday)
   end
+
 end
