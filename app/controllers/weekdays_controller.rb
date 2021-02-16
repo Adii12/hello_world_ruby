@@ -1,35 +1,35 @@
 class WeekdaysController < ApplicationController
-
-  def get_next_occuring (day)
-    Date.today.next_occurring(day)
-  end
-
   def monday
-    @next_monday = get_next_occuring(:monday)
+    get_next_occuring(:monday)
   end
 
   def tuesday
-    @next_tuesday = get_next_occuring(:tuesday)
+    get_next_occuring(:tuesday)
   end
 
   def wednesday
-    @next_wednesday = get_next_occuring(:wednesday)
+    get_next_occuring(:wednesday)
   end
 
   def thursday
-    @next_thursday = get_next_occuring(:thursday)
+    get_next_occuring(:thursday)
   end
 
   def friday
-    @next_friday = get_next_occuring(:friday)
+    get_next_occuring(:friday)
   end
 
   def saturday
-    @next_saturday = get_next_occuring(:saturday)
+    get_next_occuring(:saturday)
   end
 
   def sunday
-    @next_sunday = get_next_occuring(:sunday)
+    get_next_occuring(:sunday)
   end
 
+  private
+
+  def get_next_occuring(day)
+    @next_day = Date.today.next_occurring(day)
+  end
 end
